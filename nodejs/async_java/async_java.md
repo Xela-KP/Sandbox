@@ -1,8 +1,10 @@
 # Synchronous and Asynchronous javascript
 
+## Synchronous Operations
+
 Code runs sequentially, one line after the other
 
-## Asynchronous Code
+## Asynchronous Operations
 
 Code that runs off of the main thread.
 Does **not block** proceeding code from running.
