@@ -86,5 +86,3 @@ promise.then((result) => {
 - **Callbacks** are operations executed after an initial operation completes, often used in asynchronous programming.
 - **Promises** are objects that represent the completion or failure of an asynchronous operation and provide a more structured way to handle asynchronous results.
 - The **resolve** and **reject** functions in Promises are callbacks used to mark the promise as fulfilled or rejected.
-
-Your understanding of callbacks and promises is correct. The adjustments made help clarify the roles of `resolve` and `reject` within the context of Promises and ensure that the explanations are precise and easy to follow.
