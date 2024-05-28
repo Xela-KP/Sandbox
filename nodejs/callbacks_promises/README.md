@@ -47,38 +47,29 @@ const callback = (resolve, reject) => {
 
 ## What is a Promise?
 
-A **promise** is the same thing as a callback, except it's easier to read.
+A **promise** is an **object** that **helps us** use create and use **callbacks**.
+
+A **promise** is an **object** that can either **resolve** or **reject** based on the execution of some **operation**.
+The **operation** executed inside the **promise** is the same as the **initial operation** in a **callback**.
+
+A **promise** is created using a **function** as a **constructor argument**.
+The **constructor argument function** must take 2 function arguments: **resolve** and **reject**.
+The **body** of the **constructor argument function** is the **operation** that executes before a **callback**. (aka the **initial operation**).
+The **resolve** and **reject** functions are both **callback** functions.
+The **resolve** function is a **callback** that is executed if the **initial operation** is successful.
+The **reject** function is a **callback** that is executed if the **initial operation** is unsuccessful.
+
+The actual implementation of the **resolve** function is defined inside the **.then** method of a **promise**.
+The actual implementation of the **reject** function is defined inside the **.catch** method of a **promise**.
 
 ```js
 const promise = new Promise(
     (resolve, reject) => {
-        isSuccess ? resolve([successArguments]?) : reject([failureArguments]);
+        isSuccess ? resolve(arg1, arg2, arg3) : reject(arg1);
     }
 );
-```
 
-## What is the difference?
-
-Although the two functions above look identical apart from a promise creating a new Promise object, they are different.
-The difference lies in how the callback and promise functions are called.
-
-### Callback
-
-```js
-callback(
-    ([successArguments]?) => {'callback executes this block on success (RESOLVES)'},
-    ([faulureArguments]?) => {'callback executes this block on failure (REJECTS)'}
-);
-```
-
-### Promise
-
-```js
-promise
-    .then(([successArguments]?) => {'promise executes this block on success (RESOLVES)'})
-    .catch(([faulureArguments]?) => {'promise executes this block on failure (REJECTS)'})
+promise.then((arg1, arg2, arg3) => {...}).catch((arg1) => {...})
 ```
 
 ## Conclusion
-
-**Callback** and **Promises** are the same thing, except Promises are easier to read and fix the issue of callback hell (Nested Callbacks).
