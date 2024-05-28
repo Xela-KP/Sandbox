@@ -31,7 +31,7 @@ console.log('Call Sydney');
 This is a **synchronous** program.
 `Hello` is logged first.
 `World` is logged after `Hello`.
-By the above defenition: `console.log('World');` is a **callback** to `console.log('Hello');`.
+By the above defenition: `console.log('World');` is *technically* a **callback** to `console.log('Hello');`.
 
 An equivalent program:
 
@@ -51,8 +51,8 @@ console.log('Call Timothy');
 console.log('Call Sydney');
 ```
 
-`logWorld` is a callback to `logHello`.
-They both do the exact same thing, and are still run synchronously.
+`logWorld` is a **callback** to `logHello`.
+Both above programs do the exact same thing.
 
 In both examples, `Hello` **must** be logged **before** `World`.
 `World` **waits** for `Hello` to be logged.
